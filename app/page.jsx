@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Heart, Book, Home, Facebook, Twitter, Instagram } from 'lucide-react'
 
-export default function Home() {
+export default function home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [currentSentence, setCurrentSentence] = useState(0)
 
@@ -28,17 +28,19 @@ export default function Home() {
   ]
 
   const testimonials = [
-    { name: 'John Doe', role: 'Volunteer', quote: 'Working with this charity has been an incredibly rewarding experience.', image: '/placeholder.svg?height=100&width=100' },
-    { name: 'Jane Smith', role: 'Beneficiary', quote: 'The support I received changed my life. I\'m forever grateful.', image: '/placeholder.svg?height=100&width=100' },
-    { name: 'Mike Johnson', role: 'Donor', quote: 'I\'ve seen firsthand the impact of my donations. It\'s truly inspiring.', image: '/placeholder.svg?height=100&width=100' },
+    { name: 'Person 1', role: 'His/Her role', quote: 'Example: Working with this charity has been an incredibly rewarding experience.', image: '/placeholder.svg?height=100&width=100' },
+    { name: 'Person 2', role: 'His/Her role', quote: 'Example: The support I received changed my life. I\'m forever grateful.', image: '/placeholder.svg?height=100&width=100' },
+    { name: 'Person 3', role: 'His/Her role', quote: 'Example: I\'ve seen firsthand the impact of my donations. It\'s truly inspiring.', image: '/placeholder.svg?height=100&width=100' },
   ]
 
   return (
     <main className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="bg-white shadow-md">
+      <header className="bg-white shadow-md fixed top-0 h-[15vh]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <a href="/" className="text-2xl font-bold text-orange-500">CharityName</a>
+          <a href="/">
+          <img className='w-24 h-24' src="/logo.jpg" alt="This is an image of a logo" />
+          </a>
           <nav className={`${isMenuOpen ? 'block' : 'hidden'} md:block`}>
             <ul className="md:flex space-y-2 md:space-y-0 md:space-x-4">
               <li><a href="#services" className="hover:text-orange-500">Services</a></li>
@@ -55,7 +57,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-orange-500 text-white py-20">
+      <section className="bg-orange-500 text-white py-20 h-[80vh] flex items-center justify-center mt-[8rem] w-[100%]">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-8 h-24 transition-all duration-500 ease-in-out">
             {sentences[currentSentence]}
@@ -101,8 +103,8 @@ export default function Home() {
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h2 className="text-3xl font-bold mb-4">About Us</h2>
-            <p className="mb-4">We are a dedicated charity organization committed to making a positive impact in our community. Our mission is to provide support, resources, and hope to those in need.</p>
-            <p>With over 20 years of experience, we've helped thousands of individuals and families overcome challenges and build better lives.</p>
+            <p className="mb-4">We are a dedicated charity organization committed to making a positive impact in our community. Our mission is to provide support, resources, and hope to children in need.</p>
+            <p>At the beginning of our journey, we are devoted to making a difference in the lives of young children who face difficult challenges every day. Though we're new, our mission is clear: to bring hope, joy, and opportunity to these children who need it most. Every donation, no matter the size, helps us build a brighter, more nurturing world for them, one step at a time. Join us in shaping a future where every young child can dream, thrive, and grow, surrounded by the support they deserve. Together, we can create a lasting impact on young lives.</p>
           </div>
           <div className="md:w-1/2">
             <img src="/placeholder.svg?height=400&width=600" alt="About Us" className="rounded-lg shadow-md" />
@@ -157,10 +159,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">CharityName</h3>
-              <p>123 Charity Street, City, Country</p>
-              <p>Phone: (123) 456-7890</p>
-              <p>Email: info@charityname.org</p>
+              <h3 className="text-xl font-semibold mb-4">Gaba Hope For Kids</h3>
+              <p>Unknown P.O Box Number</p>
+              <p>Phone: Unknown</p>
+              <p>Email: Unknown.org</p>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
@@ -181,7 +183,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 text-center">
-            <p>&copy; {new Date().getFullYear()} CharityName. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Gaba Hope For Kids. 2024 All rights reserved.</p>
           </div>
         </div>
       </footer>
