@@ -6,6 +6,155 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+#header{
+  z-index: 10;
+}
+
+.hero{
+  max-width:100%;
+  min-height: 10vh;
+  margin-top: 8rem;
+  display: flex;
+  position: relative;
+  background-color: orangered;
+}
+.overall-div{
+  position: absolute;
+  width: 100%;
+  height: 80vh;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  background: linear-gradient(to bottom,rgba(255, 68, 0, 0.452),rgba(46, 46, 136, 0.007), rgba(255, 68, 0, 0))
+}
+.left{
+  min-width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+.hero-image{
+  max-width: 100%;
+  height: 100%;
+}
+#hero-word{
+  color: white;
+}
+
+.right{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  flex-direction: column;
+  padding: 9rem 2rem;
+  z-index: 3;
+  gap: 8rem;
+
+  
+}
+
+@media (max-width:943px) {
+  .hero{
+    display: flex;
+    max-width: 100%;
+  }
+  
+  .left{
+    width: 100%;
+   
+  }
+ 
+  .right{
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    gap: 0;
+  }
+  #hero-word{
+    font-size:300%;
+    color: white;
+  }
+  
+ .top-right{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  
+ }
+ .bottom-right{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items:flex-start;
+  justify-content: center;
+ 
+ }
+ 
+}
+@media (max-width:653px) {
+  .right{
+    height: 40vh;
+    
+  }
+  #hero-word{
+    font-size: 200%;
+  }
+  
+}
+@media (max-width:547px) {
+  .right{
+    height: 30vh;
+  }
+}
+@media (max-width:447px) {
+  .right{
+    height: 20vh;
+  }
+  #hero-word{
+    font-size: 150%;
+  }
+}
+@media (max-width:357px) {
+  .right{
+    height: 15vh;
+  }
+  #hero-word{
+    font-size: 130%;
+  }
+  .top-right{
+    height: 10%;
+  }
+  .bottom-right{
+    height: 90%;
+  }
+}
+@media (max-width:325px) {
+  #hero-word{
+    font-size: 110%;
+  }
+  
+}
+
+
+
+
+
+
+  
+
 
 @media (prefers-color-scheme: dark) {
   :root {

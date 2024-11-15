@@ -16,7 +16,7 @@ export default function home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSentence((prev) => (prev + 1) % sentences.length)
-    }, 5000)
+    }, 6500)
 
     return () => clearInterval(interval)
   }, [])
@@ -24,7 +24,7 @@ export default function home() {
   const services = [
     { icon: Heart, title: 'Healthcare', description: 'Providing essential medical care to those in need.' },
     { icon: Book, title: 'Education', description: 'Empowering communities through knowledge and learning.' },
-    { icon: Home, title: 'Housing', description: 'Building safe and comfortable homes for families.' },
+    { icon: Home, title: 'Outreach', description: 'Building safe and comfortable homes for families.' },
   ]
 
   const testimonials = [
@@ -35,15 +35,16 @@ export default function home() {
 
   return (
     <main className="min-h-screen flex flex-col">
+      <html className='scroll-smooth'></html>
       {/* Header */}
-      <header className="bg-white shadow-md fixed top-0 h-[15vh]">
+      <header className="bg-white shadow-md fixed top-0 w-[100%] " id='header'>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <a href="/">
           <img className='w-24 h-24' src="/logo.jpg" alt="This is an image of a logo" />
           </a>
           <nav className={`${isMenuOpen ? 'block' : 'hidden'} md:block`}>
-            <ul className="md:flex space-y-2 md:space-y-0 md:space-x-4">
-              <li><a href="#services" className="hover:text-orange-500">Services</a></li>
+            <ul className="md:flex space-y-2 md:space-y-0 md:space-x-4 gap-4 " >
+              <li><a href="#services" className="hover:text-orange-500" >Services</a></li>
               <li><a href="#testimonials" className="hover:text-orange-500">Testimonials</a></li>
               <li><a href="#about" className="hover:text-orange-500">About</a></li>
               <li><a href="#donate" className="hover:text-orange-500">Donate</a></li>
@@ -57,14 +58,35 @@ export default function home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-orange-500 text-white py-20 h-[80vh] flex items-center justify-center mt-[8rem] w-[100%]">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-8 h-24 transition-all duration-500 ease-in-out">
+      <div className="hero">
+        <div className="left">
+          <img src="hero1.jpeg" alt="Hero image" className='hero-image'/>
+        </div>
+        <div className="right">
+
+          <div className="top-right">
+          <h1 className="text-3xl md:text-6xl font-bold mb-8 h-24 transition-all duration-500 ease-in-out" id='hero-word'>
             {sentences[currentSentence]}
           </h1>
-          <a href="#donate" className="bg-white text-orange-500 px-8 py-3 rounded-full font-bold hover:bg-orange-100 transition duration-300">Donate Now</a>
-        </div>
-      </section>
+
+          </div>
+          <div className="bottom-right">
+          <a href="#donate" className="bg-orange-600 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-100 transition duration-300 ">Donate Now</a>
+          </div>
+
+          </div>
+
+          <div className="overall-div">
+
+
+          </div>
+
+
+        
+        
+
+      </div>
+      
 
       {/* Services Section */}
       <section id="services" className="py-20">
@@ -187,6 +209,10 @@ export default function home() {
           </div>
         </div>
       </footer>
+
+    <button>
+      Download
+      </button>
     </main>
   )
 }
