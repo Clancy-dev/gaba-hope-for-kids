@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X, Heart, Book, Home, Facebook, Twitter, Instagram } from 'lucide-react'
+import HeroImage from '@/components/HeroImage'
 
 export default function home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -60,12 +61,12 @@ export default function home() {
       {/* Hero Section */}
       <div className="hero">
         <div className="left">
-          <img src="hero1.jpeg" alt="Hero image" className='hero-image'/>
+         <HeroImage/>
         </div>
         <div className="right">
 
           <div className="top-right">
-          <h1 className="text-3xl md:text-6xl font-bold mb-8 h-24 transition-all duration-500 ease-in-out" id='hero-word'>
+          <h1 className="text-3xl  md:text-6xl font-bold mb-8 h-24 transition-all duration-1000 ease-in-out" id='hero-word'>
             {sentences[currentSentence]}
           </h1>
 
