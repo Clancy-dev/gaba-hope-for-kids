@@ -121,7 +121,8 @@
 }
 @media (max-width:447px) {
   .right{
-    height: 20vh;
+    height: 25vh;
+
   }
   #hero-word{
     font-size: 150%;
@@ -129,7 +130,7 @@
 }
 @media (max-width:357px) {
   .right{
-    height: 15vh;
+    height: 20vh;
   }
   #hero-word{
     font-size: 130%;
