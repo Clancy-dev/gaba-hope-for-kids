@@ -71,7 +71,7 @@ export default function home() {
 
           </div>
           <div className="bottom-right">
-          <a href="#donate" className="bg-orange-600 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-100 transition duration-300 ">Donate Now</a>
+          <a href="#donate" className="bg-orange-600 border-b-2 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-100 transition duration-300 ">Donate Now</a>
           </div>
 
           </div>
@@ -129,7 +129,7 @@ export default function home() {
             <p>At the beginning of our journey, we are devoted to making a difference in the lives of young children who face difficult challenges every day. Though we're new, our mission is clear: to bring hope, joy, and opportunity to these children who need it most. Every donation, no matter the size, helps us build a brighter, more nurturing world for them, one step at a time. Join us in shaping a future where every young child can dream, thrive, and grow, surrounded by the support they deserve. Together, we can create a lasting impact on young lives.</p>
           </div>
           <div className="md:w-1/2">
-            <img src="/placeholder.svg?height=400&width=600" alt="About Us" className="rounded-lg shadow-md" />
+            <img src="/About.png?height=400&width=600" alt="About Us" className="rounded-lg shadow-md" />
           </div>
         </div>
       </section>
@@ -210,9 +210,7 @@ export default function home() {
         </div>
       </footer>
 
-    <button>
-      Download
-      </button>
+    
     </main>
   )
 }
