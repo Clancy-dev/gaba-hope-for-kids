@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: any }) {
   const post = blogPosts.find((p) => p.slug === params.slug)
   return {
     title: post ? `${post.title} | GABA Hope for Kids Blog` : 'Blog Post Not Found',
