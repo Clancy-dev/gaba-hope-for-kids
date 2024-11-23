@@ -8,13 +8,15 @@ type Params = {
   slug: string;
 }
 
+// Generate Static Params for dynamic routes
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,
   }))
 }
 
-export async function generateMetadata({ params }: { params: any }) {
+// Define generateMetadata with correct typing for params
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const post = blogPosts.find((p) => p.slug === params.slug)
   return {
     title: post ? `${post.title} | GABA Hope for Kids Blog` : 'Blog Post Not Found',
@@ -22,6 +24,7 @@ export async function generateMetadata({ params }: { params: any }) {
   }
 }
 
+// BlogPost component receiving params as an object of type Params
 export default function BlogPost({ params }: { params: Params }) {
   const post = blogPosts.find((p) => p.slug === params.slug)
 
