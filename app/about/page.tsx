@@ -35,11 +35,9 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
 
 export default function About() {
   return (
-    
     <div className="min-h-screen">
       <section className="py-16 bg-blue-100">
         <div className="container mx-auto px-4">
-
           <h1 className="text-4xl font-bold text-center mb-8">About Gaba Hope For Kids</h1>
           <p className="text-xl text-center max-w-3xl mx-auto">
             Founded in 2023, Gaba Hope For Kids is dedicated to improving the lives of children and youth
@@ -77,11 +75,12 @@ export default function About() {
           </div>
         </section>
       </AnimatedSection>
+
       <AnimatedSection>
-      <main className="min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-8">Our Team</h1>
-      <MovingCards />
-       </main>
+        <main className="min-h-screen flex flex-col items-center justify-center">
+          <h1 className="text-3xl font-bold mb-8">Our Team</h1>
+          <MovingCards />
+        </main>
       </AnimatedSection>
 
       <AnimatedSection>
@@ -110,13 +109,15 @@ export default function About() {
             <h2 className="text-3xl font-bold text-center mb-12">Our Impact</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
-                { number: '1000+', description: 'Children Supported' },
-                { number: '50+', description: 'Community Partners' },
-                { number: '10', description: 'Educational Programs' },
-                { number: '5', description: 'Countries Reached' },
+                { number: 1000, description: 'Children Supported' },
+                { number: 50, description: 'Community Partners' },
+                { number: 10, description: 'Educational Programs' },
+                { number: 5, description: 'Countries Reached' },
               ].map((stat) => (
                 <div key={stat.description} className="text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2"><NumberTicker value={stat.number}/></div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">
+                    <NumberTicker value={stat.number} />
+                  </div>
                   <div>{stat.description}</div>
                 </div>
               ))}
