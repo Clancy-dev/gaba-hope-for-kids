@@ -92,7 +92,7 @@ export default function DonationMethods() {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  <ol className="list-decimal pl-5">
+                  <ol className="list-decimal pl-5 font-bold">
                     {method.steps.map((step, stepIndex) => (
                       <li key={stepIndex} className="mb-2">
                         {step}
