@@ -2,6 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
+import ThankYouMessage from '@/components/ThankYouMessage'
+import DonationMethods from '@/components/DonationMethods'
+import Hero from '@/components/Hero'
+import FAQ from '@/components/FAQ'
 // import { Button } from '@/components/ui/button'
 // import { Input } from '@/components/ui/input'
 // import { Label } from '@/components/ui/label'
@@ -62,70 +66,14 @@ export default function Donate() {
       </section>
 
       <AnimatedSection>
-        Being Worked On......
+      <main className="min-h-screen bg-white">
+      <Hero />
+      <DonationMethods />
+      <ThankYouMessage />
+      <FAQ />
+    </main>
       </AnimatedSection>
 
-      {/* <AnimatedSection>
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Make a Donation</CardTitle>
-                  <CardDescription>Choose an amount or enter a custom donation</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form>
-                    <RadioGroup value={donationAmount} onValueChange={handleDonationChange} className="grid grid-cols-3 gap-4 mb-4">
-                      {['25', '50', '100', '250', '500', '1000'].map((amount) => (
-                        <div key={amount}>
-                          <RadioGroupItem value={amount} id={`amount-${amount}`} className="peer sr-only" />
-                          <Label
-                            htmlFor={`amount-${amount}`}
-                            className="flex items-center justify-center h-12 rounde d-md border-2 border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
-                          >
-                            ${amount}
-                          </Label>
-                        </div>
-                      ))}
-                    </RadioGroup>
-                    <div className="space-y-2">
-                      <Label htmlFor="custom-amount">Custom Amount</Label>
-                      <Input
-                        type="number"
-                        id="custom-amount"
-                        placeholder="Enter custom amount"
-                        value={customAmount}
-                        onChange={handleCustomAmountChange}
-                      />
-                    </div>
-                  </form>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full">Donate Now</Button>
-                </CardFooter>
-              </Card>
-              <div>
-                <h2 className="text-3xl font-bold mb-4">Your Impact</h2>
-                <p className="mb-6">
-                  Your donation directly supports our programs and initiatives, helping us to:
-                </p>
-                <ul className="list-disc list-inside space-y-2 mb-6">
-                  <li>Provide educational resources and support to underprivileged children</li>
-                  <li>Offer health and nutrition programs to ensure children's well-being</li>
-                  <li>Empower youth through leadership and skill-building workshops</li>
-                  <li>Expand our reach to more communities in need</li>
-                </ul>
-                <p className="mb-6">
-                  We are committed to transparency and accountability. You can trust that your donation
-                  will be used effectively to create positive change in the lives of children and youth.
-                </p>
-                <Button variant="outline">View Our Financial Reports</Button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection> */}
 
       {/* <AnimatedSection>
         <section className="py-16 bg-yellow-100">
