@@ -53,7 +53,7 @@ export default function Home() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section className="py-16">
+        <section className="py-16 relative">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12 heading-font">Our Programs</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -63,7 +63,7 @@ export default function Home() {
                 { title: 'Health & Nutrition', icon: '🍎', word:'We deliver healthcare assistance through nutritious sustenance, wellness programs, and medical accessibility for underserved children.'},
                 { title: 'Youth Empowerment', icon: '💪', word:'We empower disenfranchised youth through leadership development, personal growth initiatives, and community engagement opportunities.'},
               ].map((program) => (
-                <div key={program.title} className="bg-white p-6 rounded-lg shadow-md text-center relative">
+                <div key={program.title} className="relative text-center p-6 shadow-mdflex min-h-[250px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl ">
                   <BorderBeam size={250} duration={12} delay={9} /> 
                   <div className="text-4xl mb-4">{program.icon}</div>
                   <h3 className="text-xl font-semibold mb-2">{program.title}</h3>
