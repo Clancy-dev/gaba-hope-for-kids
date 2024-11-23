@@ -3,13 +3,18 @@ import { blogPosts } from '@/data/blogPosts'
 import Link from 'next/link'
 import Image from 'next/image'
 
+// Define the type for the params
+type Params = {
+  slug: string;
+}
+
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,
   }))
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const post = blogPosts.find((p) => p.slug === params.slug)
   return {
     title: post ? `${post.title} | GABA Hope for Kids Blog` : 'Blog Post Not Found',
@@ -17,7 +22,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
+export default function BlogPost({ params }: { params: Params }) {
   const post = blogPosts.find((p) => p.slug === params.slug)
 
   if (!post) {
@@ -48,4 +53,3 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     </main>
   )
 }
-
