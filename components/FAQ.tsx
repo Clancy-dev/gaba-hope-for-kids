@@ -80,12 +80,12 @@ export default function FAQ() {
   return (
     <section
       ref={ref}
-      className={`bg-orange-100 py-16 transition-opacity duration-1000 ${
+      className={`  transition-opacity duration-1000 heading-font ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <div className="container mx-auto px-4">
-        <h2 className="mb-8 text-center text-4xl font-bold text-orange-900">Frequently Asked Questions</h2>
+      <div className="container mx-auto px-4 bg-pink-200 heading-font p-2">
+        <h2 className="mb-8 text-center text-4xl font-bold text-orange-900 ">Frequently Asked Questions</h2>
         <Accordion type="single" collapsible className="w-full">
           {faqItems.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>

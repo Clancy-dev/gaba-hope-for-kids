@@ -47,6 +47,9 @@ importers:
       react-error-boundary:
         specifier: ^4.1.2
         version: 4.1.2(react@19.0.0-rc-66855b96-20241106)
+      react-hook-form:
+        specifier: ^7.53.2
+        version: 7.53.2(react@19.0.0-rc-66855b96-20241106)
       swiper:
         specifier: ^11.1.15
         version: 11.1.15
@@ -923,6 +926,12 @@ packages:
 
   react-error@1.0.6:
     resolution: {integrity: sha512-HGrS7qxXl2oXlHvuAqXrV2Fw7cgm/8N3//+92BWDtCAOWv6zBWyzMA/7P9BZUDfn0EQJNfmVhtzbY6L1xoFOhw==}
+
+  react-hook-form@7.53.2:
+    resolution: {integrity: sha512-YVel6fW5sOeedd1524pltpHX+jgU2u3DSDtXEaBORNdqiNrsX/nUI/iGXONegttg0mJVnfrIkiV0cmTU6Oo2xw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -1869,6 +1878,10 @@ snapshots:
   react-error@1.0.6:
     dependencies:
       react: 16.14.0
+
+  react-hook-form@7.53.2(react@19.0.0-rc-66855b96-20241106):
+    dependencies:
+      react: 19.0.0-rc-66855b96-20241106
 
   react-is@16.13.1: {}
 

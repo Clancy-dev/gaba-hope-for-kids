@@ -22,6 +22,7 @@
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-error": "^1.0.6",
     "react-error-boundary": "^4.1.2",
+    "react-hook-form": "^7.53.2",
     "swiper": "^11.1.15",
     "swiper-react": "^1.0.0",
     "tailwind-merge": "^2.5.4",

@@ -30,8 +30,8 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="bg-white py-16">
-      <div className="container mx-auto px-4">
+    <section className="bg-white heading-font">
+      <div className="container mx-auto">
         <div
           ref={ref}
           className={` relative overflow-hidden rounded-lg shadow-xl transition-opacity duration-1000 reduce-hero ${
@@ -39,9 +39,9 @@ export default function Hero() {
           }`}
           style={{ height: '400px' }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700">
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-pink-500">
             <Image
-              src="/donations/handst.png?height=400&width=800"
+              src="/donations/handst.png?height=400&width=900"
               alt="Gaba Hope For Kids"
               layout="fill"
               objectFit="cover"

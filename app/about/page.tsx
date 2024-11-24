@@ -38,9 +38,9 @@ export default function About() {
     <div className="min-h-screen">
       <section className="py-16 bg-blue-100">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center mb-8">About Gaba Hope For Kids</h1>
+          <h1 className="text-4xl font-bold text-center mb-8 heading-font">About Gaba Hope For Kids</h1>
           <p className="text-xl text-center max-w-3xl mx-auto">
-            Founded in 2023, Gaba Hope For Kids is dedicated to improving the lives of children and youth
+            Founded in 2021, Gaba Hope For Kids is dedicated to improving the lives of children and youth
             through education, health initiatives, and empowerment programs.
           </p>
         </div>
