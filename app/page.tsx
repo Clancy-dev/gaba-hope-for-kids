@@ -83,12 +83,7 @@ export default function Home() {
               Your support can change lives. Join us in our mission to bring hope and opportunities to children in need.
             </p>
             <div className="flex justify-center space-x-4">
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/get-involved">Get Involved</Link>
-              </Button>
-              <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600">
-                <Link href="/donate">Donate Now</Link>
-              </Button>
+  
             </div>
           </div>
         </section>
