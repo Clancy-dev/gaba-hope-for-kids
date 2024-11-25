@@ -1,8 +1,10 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { useState } from "react"
+import Image from "next/image"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
 
 const donationMethods = [
   {
@@ -38,76 +40,88 @@ const donationMethods = [
   },
 ]
 
-export default function DonationMethods() {
-  const [visibleCards, setVisibleCards] = useState<boolean[]>(new Array(donationMethods.length).fill(false))
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([])
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = cardRefs.current.findIndex((ref) => ref === entry.target)
-            if (index !== -1) {
-              setVisibleCards((prev) => {
-                const newState = [...prev]
-                newState[index] = true
-                return newState
-              })
-              observer.unobserve(entry.target)
-            }
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    cardRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref)
-    })
-
-    return () => {
-      cardRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref)
-      })
-    }
-  }, [])
+export default function DonationTabs() {
+  const [activeTab, setActiveTab] = useState("card")
 
   return (
-    <section className="bg-blue-100 py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="mb-8 text-center text-4xl font-bold text-blue-900">Donation Methods</h2>
-        <div className="grid gap-8 md:grid-cols-2">
-          {donationMethods.map((method, index) => (
-            <Card
-              key={method.title}
-              ref={(el) => (cardRefs.current[index] = el) as any}
-              className={`transition-all duration-1000 ${
-                visibleCards[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-            >
-              <CardHeader>
-                <div className="flex items-center space-x-4">
-                  <Image src={method.image} alt={method.title} width={50} height={50} />
-                  <CardTitle>{method.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  <ol className="list-decimal pl-5 font-bold">
-                    {method.steps.map((step, stepIndex) => (
-                      <li key={stepIndex} className="mb-2">
-                        {step}
-                      </li>
-                    ))}
-                  </ol>
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+    <Card className="w-full max-w-4xl mx-auto overflow-hidden shadow-lg mt-2 mb-2">
+      {/* Apply conditional gradient based on activeTab */}
+      <div className={`p-8 text-white ${activeTab === "card" ? 'bg-gradient-to-r from-blue-400 to-blue-600' : 'bg-gradient-to-r from-green-400 to-green-600'}`}>
+        <CardTitle className="text-4xl mb-3 font-bold">Make a Donation</CardTitle>
+        <CardDescription className="text-orange-100 text-lg">Choose your preferred payment method and support our cause.</CardDescription>
       </div>
-    </section>
+      <CardContent className="p-0">
+        <Tabs defaultValue="card" className="w-full" onValueChange={setActiveTab}>
+          <TabsList className="grid w-full grid-cols-2 p-2 min-h-[4rem] bg-blue-200">
+            <TabsTrigger
+              value="card"
+              className={`data-[state=active]:bg-blue-600 data-[state=active]:text-white py-3 text-white text-center font-semibold transition-all ${activeTab === 'card' ? 'text-blue-600' : 'text-green-800'}`}
+            >
+              Card Donation
+            </TabsTrigger>
+            <TabsTrigger
+              value="mobile"
+              className={`data-[state=active]:bg-white data-[state=active]:text-green-600 py-3 text-white font-semibold transition-all ${activeTab === 'mobile' ? 'text-green-600' : 'text-white'}`}
+            >
+              Mobile Money
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="card" className="p-8">
+            <div className="space-y-6 text-center">
+              <p className="text-xl font-bold">Donate in US Dollars ($)</p>
+              
+            </div>
+          </TabsContent>
+
+          <TabsContent value="mobile" className="p-8 bg-gradient-to-b from-green-50 to-green-100">
+            <div className="grid gap-8 md:grid-cols-2">
+              {donationMethods.map((method, index) => (
+                <Card
+                  key={method.title}
+                  className="overflow-hidden shadow-lg transition-all hover:shadow-xl"
+                >
+                  <CardHeader className="bg-gradient-to-r from-green-400 to-green-600 text-white p-6">
+                    <div className="flex items-center space-x-4">
+                      <Image src={method.image} alt={method.title} width={60} height={60} className="rounded-[5px] border-[2px] border-white" />
+                      <CardTitle className="text-2xl">{method.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <ol className="list-decimal pl-6 space-y-3">
+                      {method.steps.map((step, stepIndex) => (
+                        <li key={stepIndex} className="text-gray-700 text-lg">
+                          {step}
+                        </li>
+                      ))}
+                    </ol>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+      </CardContent>
+      {activeTab === "card" && (
+        <CardFooter className="flex flex-col items-start space-y-6 bg-gradient-to-r from-blue-100 to-blue-200 p-8">
+          <div>
+            <strong className="text-xl text-blue-800 block mb-2">Account Information:</strong>
+            <p className="text-lg "><strong className="text-blue-800 ">Account Name:</strong> Gaba Hope For Kids</p>
+            {/* Bolded account number with responsive font size */}
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-2xl font-bold text-blue-800 mb-1">Account Number: <span className="text-black">01280016384408</span></p>
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-2xl font-extrabold text-blue-800"></p>
+            <p className="text-lg"><strong className="text-blue-800">SWIFT Code:</strong> DFCUUGKAXXX</p>
+          </div>
+          <div>
+            <h4 className="font-bold mb-3 text-xl text-blue-800">Additional Information:</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <li className="text-lg">Donations are processed securely through our payment provider.</li>
+              <li className="text-lg">You will receive a confirmation email after your donation is processed.</li>
+              <li className="text-lg">For any issues or questions, please contact our support team.</li>
+            </ul>
+          </div>
+        </CardFooter>
+      )}
+    </Card>
   )
 }
-
