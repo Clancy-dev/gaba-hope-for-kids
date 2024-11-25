@@ -103,9 +103,8 @@ export default function FindUs() {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
-                      <li><span className="font-semibold">Monday - Friday:</span> 9:00 AM - 5:00 PM</li>
-                      <li><span className="font-semibold">Saturday:</span> 10:00 AM - 2:00 PM</li>
-                      <li><span className="font-semibold">Sunday:</span> Closed</li>
+                      <li><span className="font-semibold">Monday - Sunday:</span> Open 24 hours</li>
+                      
                     </ul>
                   </CardContent>
                 </Card>
