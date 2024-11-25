@@ -21,7 +21,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   metadataBase:new URL('https://www.gabahopeforkids.org/'),
-  title: 'Gaba Hope For Kids | Empowering Underprivileged Children & Youth in Need.',
+  title: 'Gaba Hope For Kids | Empowering Underprivileged Children & Youth in Uganda.',
   description: 'Gaba Hope For Kids in Wakiso Mutundwe, Kampala, Uganda supports children with education, healthcare, and empowerment. Contact us at +256 708 856553 or +256 787 343415.',
   applicationName: 'Gaba Hope For Kids',
   keywords: [

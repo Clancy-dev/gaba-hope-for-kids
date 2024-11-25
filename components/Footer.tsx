@@ -54,7 +54,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <MapPin className="mr-2" />
-                <span>P.O Box 115207, Wakiso. Mutundwe</span>
+                <span>P.O Box 115207, Wakiso. Mutundwe Uganda</span>
               </li>
             </ul>
           </div>
