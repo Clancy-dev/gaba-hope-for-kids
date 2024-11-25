@@ -8,9 +8,11 @@ import Link from 'next/link'
 import { BorderBeam } from '@/components/ui/border-beam'
 // import Particles from '@/components/ui/particles'
 
+
 interface AnimatedSectionProps {
   children: React.ReactNode
 }
+
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children }) => {
   const ref = useRef<HTMLDivElement>(null)

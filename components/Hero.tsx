@@ -34,10 +34,10 @@ export default function Hero() {
       <div className="container mx-auto">
         <div
           ref={ref}
-          className={` relative overflow-hidden rounded-lg shadow-xl transition-opacity duration-1000 reduce-hero ${
+          className={` relative overflow-hidden rounded-lg shadow-xl transition-opacity duration-1000 reduce-hero sm:h-[300px] ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ height: '400px' }}
+          style={{ height: '400px'}}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-pink-500">
             <Image
