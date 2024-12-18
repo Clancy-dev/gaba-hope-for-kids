@@ -87,6 +87,7 @@ export default function About() {
         <section className="py-16 bg-yellow-100">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { title: 'Compassion', description: 'We approach our work with empathy and understanding.' },
