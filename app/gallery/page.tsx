@@ -197,7 +197,7 @@ export default function Gallery() {
   const goToNextImage = () => setSelectedImageIndex((prev) => (prev === null || prev === galleryImages.length - 1) ? 0 : prev + 1)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
+    <div className="min-h-screen bg-gradient-to-b mt-[72px] from-blue-50 to-green-50">
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-center mb-8 text-blue-800">Our Gallery of Hope</h1>

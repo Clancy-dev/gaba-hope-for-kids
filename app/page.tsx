@@ -36,7 +36,7 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-[72px]">
       <HeroSection />
 
       <AnimatedSection>

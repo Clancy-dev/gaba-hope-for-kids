@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-blue-100 py-12">
+    <main className="min-h-screen mt-[72px] bg-blue-100 py-12">
 
       <section className="py-16 bg-yellow-100">
         <div className="container mx-auto px-4">
