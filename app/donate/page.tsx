@@ -57,22 +57,22 @@ export default function Donate() {
     <div className="min-h-screen mt-[72px]">
       <section className="py-16 bg-blue-100">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center mb-8">Donate to Gaba Hope For Kids</h1>
-          <p className="text-xl text-center max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-center mb-8">This page is being worked on by your developer....</h1>
+          {/* <p className="text-xl text-center max-w-3xl mx-auto">
             Your generous donation helps us continue our mission of empowering children and youth.
             Every contribution, no matter the size, makes a difference.
-          </p>
+          </p> */}
         </div>
       </section>
 
-      <AnimatedSection>
+      {/* <AnimatedSection>
       <main className="min-h-screen bg-white">
       <Hero />
       <DonationMethods />
       <ThankYouMessage />
       <FAQ />
     </main>
-      </AnimatedSection>
+      </AnimatedSection> */}
 
 
       
