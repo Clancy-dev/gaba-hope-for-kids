@@ -67,7 +67,7 @@ export default function Header() {
             ))}
           </div>
           <button
-            className="md:hidden bg-blue-900 text-white p-2 rounded-md transition-transform duration-500 ease-in-out hover:rotate-45"
+            className="md:hidden bg-blue-900 text-white p-2 rounded-md transition-transform duration-1000 ease-in-out hover:rotate-360"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
