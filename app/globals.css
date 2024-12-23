@@ -61,6 +61,36 @@ body {
 }
 
 
+@keyframes pulse-zoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.image-container {
+  position: relative;
+  width: 256px;
+  height: 256px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.pulsing-image {
+  animation: pulse-zoom 3s ease-in-out infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pulsing-image:hover {
+  transform: scale(1.1);
+}
+
+.donate-section {
+  background: linear-gradient(135deg, rgb(255,255,255), #f0f0f1, rgb(255,255,255));
+}
+
+
+
+
 
 .font {
   font-family: "Lilita One", sans-serif;

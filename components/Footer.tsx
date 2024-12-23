@@ -121,7 +121,7 @@ export default function Footer() {
                   href="mailto:info@gabahopeforkids.org"
                   className="hover:text-yellow-300 transition-colors"
                 >
-                  gabahopeforkids@gmail.com
+                  gabahopeforkidsuganda@gmail.com
                 </a>
               </li>
 
