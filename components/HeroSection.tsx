@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
+import { EnhancedDonateButton } from './EnhancedDonateButton'
 // import ShimmerButton from './ui/shimmer-button'
 
 const backgroundImages = [
@@ -47,7 +48,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative  min-h-[50vh] sm:min-h-[70vh] md:min-h-[90vh] lg:min-h-[100vh] max-w-[100%] overflow-hidden p-6">
+    <section className="relative min-h-[50vh] sm:min-h-[70vh] md:min-h-[90vh] lg:min-h-[100vh] max-w-[100%] overflow-hidden p-6">
       {backgroundImages.map((src, index) => (
         <Image
           key={src}
@@ -68,10 +69,7 @@ export default function HeroSection() {
             <h1 className="text-4xl md:text-6xl font-bold mb-4 p-4 ">{welcomeTexts[currentTextIndex].title}</h1>
             <p className="text-xl md:text-2xl mb-8 ">{welcomeTexts[currentTextIndex].subtitle}</p>
           </div>
-          <Button asChild size="lg" className=" border-b-[1px] border-l-[1px]  bg-orange-500 hover:bg-orange-600 text-white">
-            <Link href="/donate">Donate Now</Link>
-            {/* <ShimmerButton className="shadow-2xl"/> */}
-          </Button>
+          <EnhancedDonateButton/>
         </div>
       </div>
     </section>
